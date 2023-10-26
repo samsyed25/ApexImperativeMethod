@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Apex Imperative Method Example" icon-name="custom:custom54">
+        <div class="slds-m-around_small">
+
+            <lightning-input value={subject} label="Search Cases by subject" onchange={handleChange}></lightning-input>
+            
+            <lightning-button label="Load Cases" onclick={handleLoad}></lightning-button>
+            </div>
+
+            <div class="slds-m-around_small">
+                <template for:each={records} for:item="item">
+                    <p key={item.Id}>
+                        {item.Status} <br/>
+                        {item.Subject}
+                    </p>
+    
+                </template>
+                <template if:true={error}>
+                    There is an error while fetching the class.
+                </template>
+                </div>
+            </lightning-card>
+</template>
